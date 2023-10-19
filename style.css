@@ -1,0 +1,7 @@
+input[type=submit], input[type=text]{
+    background-color: azure;
+    border: black 2px;
+}
+body, html{
+    background-color: antiquewhite;
+}
