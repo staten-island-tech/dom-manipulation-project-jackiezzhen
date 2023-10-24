@@ -9,20 +9,27 @@ input[type=text]{
 
 body, html{
     background-color: antiquewhite;
-    margin:10px
 }
 
 
 .card{
-    flex-direction: column;
+
+    align-items: center;
+    position: absolute;
+    text-align: center;
+    top:45%;
+    width:10%;
+    left:5%;
+    margin:0 auto;
+}
+
+.container {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    height:10%;
-    width: 20%;
-    top: 50%;
-    left:10%;
+    justify-content: center;
+    margin:auto;
 }
+
 input{margin:10px
 
 }
