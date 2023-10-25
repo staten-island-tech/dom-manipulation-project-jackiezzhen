@@ -10,4 +10,10 @@ DOMSelectors.form.addEventListener("submit", function(event){
     console.log(DOMSelectors.name.value);
     DOMSelectors.h2.forEach(
         (e1) => e1.textContent = DOMSelectors.name.value);
+    DOMSelectors.name.value.insertAdjacentHTML(
+        'afterend',
+        "<strong>inserted text</strong>",
+          );
 });
+/*
+function copycard(copy){}*/
