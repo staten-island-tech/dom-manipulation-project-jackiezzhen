@@ -1,31 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <form action="form" id="form" class="card">
-        <label for="name">Create</label>
-
-        <label for="name">Name<input type='text' class="name"/></label>
-
-        <label for="type">Type<input type='text' class="type"/></label>
-
-        <label for="move">Moves:<input type='text' class="move"/></label>
-
-        <input type="submit" value="Click To Submit" id="submit"/>
-    </form>
-
-    <h2 id="1"></h2>
-    <h2 id="2"></h2>
-    <h2 id="3"></h2>
+  <body>
+    
+      <form action="form" class="form">
+        <label for="image">Image URL:<input type="text" id="image" /></label>
+        <label for="name">Name<input type="text" id="name" /></label>
+        <label for="type">Type<input type="text" id="type" /></label>
+        <label for="move">Moves:<input type="text" id="move" /></label>
+        <input type="submit" value="Click To Submit" id="submit" />
+      </form>
+    <div class="card"></div>
 
     <script src="app.js"></script>
-</body>
-
+  </body>
 </html>

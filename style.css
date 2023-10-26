@@ -1,6 +1,7 @@
 input[type=submit], input[type=text]{
     background-color: azure;
     border: black 2px;
+    margin-bottom: 10px;
 }
 
 input[type=text]{
@@ -12,24 +13,28 @@ body, html{
 }
 
 
-.card{
-
-    align-items: center;
-    position: absolute;
-    text-align: center;
-    top:45%;
-    width:10%;
-    left:5%;
-    margin:0 auto;
-}
-
-.container {
+.form{
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    left:10%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin:auto;
 }
+.card p{margin:5px;}
+.card img{max-width:100%;}
 
-input{margin:10px
-
+.card {
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:auto;
+    flex-wrap: wrap;
 }
