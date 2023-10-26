@@ -22,8 +22,8 @@ function createObject() {
 }
 
 function injectObject(object) {
-  const cardHTML = `<div class="card">
-    <img src="${object.imageUrl}" alt="Image/Error">
+  const CardHTML = `<div class="card">
+    <img src="${object.imageurl}" alt="Image/Error">
     <p>Name: ${object.name}</p>
     <p>Type: ${object.type}</p>
     <p>Moves: ${object.move}</p>
@@ -31,19 +31,21 @@ function injectObject(object) {
     <button class="remove">Remove</button>
     </div>`;
 
-  DOMSelectors.container.insertAdjacentHTML("beforeend", cardHTML);
+  DOMSelectors.container.insertAdjacentHTML("beforeend", CardHTML);
+  return CardHTML;
 }
 
 function ClearInputFields() {
-  nameValue.value = "";
-  typeValue.value = "";
-  moveValue.value = "";
-  imageurl.value = "";
+  createObject.nameValue = "";
+  createObject.typeValue = "";
+  createObject.moveValue = "";
+  createObject.imageurl = "";
 }
-/*
-function removeObject(event) {
-  }
-*/
+
+function removeObject() {
+  
+}
+
 DOMSelectors.form.addEventListener("submit", function (event) {
   event.preventDefault();
   const newobject = createObject();
