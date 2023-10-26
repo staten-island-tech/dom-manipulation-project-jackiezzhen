@@ -14,35 +14,34 @@ function createObject() {
   const imageurl = DOMSelectors.image.value;
 
   return {
-    name: nameValue,
-    type: typeValue,
-    move: moveValue,
-    imageurl: imageurl,
+    names: nameValue,
+    types: typeValue,
+    moves: moveValue,
+    imageurls: imageurl,
   };
 }
 
 function injectObject(object) {
   const CardHTML = `<div class="card">
-    <img src="${object.imageurl}" alt="Image/Error">
-    <p>Name: ${object.name}</p>
-    <p>Type: ${object.type}</p>
-    <p>Moves: ${object.move}</p>
+    <img src="${object.imageurls}" alt="Image/Error">
+    <p>Name: ${object.names}</p>
+    <p>Type: ${object.types}</p>
+    <p>Moves: ${object.moves}</p>
 
     <button class="remove">Remove</button>
     </div>`;
-
+  
   DOMSelectors.container.insertAdjacentHTML("beforeend", CardHTML);
-  return CardHTML;
 }
 
 function ClearInputFields() {
-  createObject.nameValue = "";
-  createObject.typeValue = "";
-  createObject.moveValue = "";
-  createObject.imageurl = "";
+  document.querySelector(".form").reset();
 }
 
 function removeObject() {
+  CardHTML.addEventListener("submit", function (event) {
+    this.CardHTML.remove();
+  });
   
 }
 
