@@ -1,6 +1,12 @@
+body, html{
+    background-color: antiquewhite; 
+    margin: 0 auto;
+    padding:0 auto;
+}
+
 input[type=submit] input[type=text]{
     background-color: azure;
-    border: black 2px;
+    border: black 1px;
     margin-bottom: 10px;
 }
 
@@ -8,11 +14,6 @@ input[type=text]{
     font-family: Georgia, 'Times New Roman', Times, serif;
     align-items: center;
 }
-
-body, html{
-    background-color: antiquewhite;
-}
-
 
 .form{
     background-color: rgb(177, 48, 48);
@@ -23,7 +24,8 @@ body, html{
     display: flex;
     flex-direction: column;
     margin:5%;
-    border-radius: 5%;
+    border-radius: 10%;
+    border: black
 }
 .card p{margin:5px;}
 .card img{max-width:90%;}
@@ -32,14 +34,22 @@ body, html{
     text-align: left;
 }
 
-.card {
-    right:50%;
+.container {
+    height: 30%;
+    width: 30% ;
+    border:black;
     background-color: white;
     padding: 10px;
     margin-bottom: 20px;
-    width: 10% ;
+    
     display: flex;
-    flex-direction: column; 
+    margin:5%;
+    flex-direction: row; 
     flex-wrap: wrap;
 }
-.card:empty{visibility: hidden;}
+.card{
+    background-color: white;
+    width: 20% ;
+    margin-bottom: 20%;
+}
+.container:empty{visibility: hidden;}

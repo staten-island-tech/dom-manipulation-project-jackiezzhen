@@ -58,8 +58,8 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   
   DOMSelectors.container.addEventListener("click", removeCard);
   event.preventDefault();
-  /*const newobject = createobject();*/
-  injectobject(createobject());
+  const newobject = createobject();
+  injectobject(newobject);
   ClearInputFields();
   
 });
