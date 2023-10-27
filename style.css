@@ -1,4 +1,4 @@
-input[type=submit], input[type=text]{
+input[type=submit] input[type=text]{
     background-color: azure;
     border: black 2px;
     margin-bottom: 10px;
@@ -6,6 +6,7 @@ input[type=submit], input[type=text]{
 
 input[type=text]{
     font-family: Georgia, 'Times New Roman', Times, serif;
+    align-items: center;
 }
 
 body, html{
@@ -14,23 +15,25 @@ body, html{
 
 
 .form{
-    background-color: white;
-    padding: 10px;
+    background-color: rgb(177, 48, 48);
+    padding: 1%;
     margin-bottom: 20px;
     width: 300px;
     left:10%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin:auto;
+    margin:5%;
     border-radius: 5%;
 }
 .card p{margin:5px;}
-.card img{max-width:100%;}
+.card img{max-width:90%;}
 
+.label{
+    text-align: left;
+}
 
 .card {
-    
+    right:50%;
     background-color: white;
     padding: 10px;
     margin-bottom: 20px;
