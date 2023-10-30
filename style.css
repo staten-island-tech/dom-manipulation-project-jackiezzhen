@@ -2,54 +2,63 @@ body, html{
     background-color: antiquewhite; 
     margin: 0 auto;
     padding:0 auto;
-}
-
-input[type=submit] input[type=text]{
-    background-color: azure;
-    border: black 1px;
-    margin-bottom: 10px;
-}
-
-input[type=text]{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
 }
 
 .form{
-    background-color: rgb(177, 48, 48);
-    padding: 1%;
-    margin-bottom: 20px;
-    width: 300px;
-    left:10%;
     display: flex;
     flex-direction: column;
-    margin:5%;
-    border-radius: 10%;
-    border: black
+    margin-bottom: 10px;
+    text-align: left;
+    align-content: center;
+    width: 80%;
 }
-.card p{margin:5px;}
-.card img{max-width:90%;}
+.form input[type="text"] {
+    background-color: azure;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    width: 87%;
+    margin-bottom: 10px;
+}
 
 .label{
     text-align: left;
 }
 
-.container {
-    height: 30%;
-    width: 30% ;
-    border:black;
-    background-color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    
-    display: flex;
-    margin:5%;
-    flex-direction: row; 
-    flex-wrap: wrap;
-}
 .card{
     background-color: white;
-    width: 20% ;
-    margin-bottom: 20%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    border: 1px solid black;
 }
-.container:empty{visibility: hidden;}
+.newcard p{margin:5px;}
+.card img {
+    max-width: 80%;
+    max-height: 60%;
+    margin-bottom: 10px;
+}
+
+
+
+.removebutton {
+    background-color: rgb(177, 48, 48);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.removebutton:hover {
+    background-color: darkred;
+}
+
+.card:empty{visibility: hidden;}

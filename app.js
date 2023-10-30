@@ -5,7 +5,7 @@ const DOMSelectors = {
   type: document.getElementById("type"),
   move1: document.getElementById("move1"),
   move2: document.getElementById("move2"),
-  container: document.querySelector(".card"),
+  card: document.querySelector(".card"),
 };
 
 
@@ -28,7 +28,7 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   }
   
   function injectobject(object) {
-    const cardHTML = `<div class="card">
+    const cardHTML = `<div class=newcard>
       <img src="${object.imageurl}" alt="Image/Error">
       <p>Name:${object.name}</p>
       <p>Type:${object.type}</p>
@@ -36,8 +36,8 @@ DOMSelectors.form.addEventListener("submit", function (event) {
       <p>Move2${object.move2}</p>
   
       <button class="removebutton">Remove</button>
-      </div>`;
-      DOMSelectors.container.insertAdjacentHTML("beforeend", cardHTML);
+      <div>`;
+      DOMSelectors.card.insertAdjacentHTML("beforeend", cardHTML);
   }
   
   function ClearInputFields() { 
@@ -51,12 +51,12 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   
   function removeCard(event) {
     if (event.target.classList.contains("removebutton")) {
-      const card = event.target.closest(".card");
+      const card = event.target.closest(".newcard");
       card.remove();
     }
   }
   
-  DOMSelectors.container.addEventListener("click", removeCard);
+  DOMSelectors.card.addEventListener("click", removeCard);
   event.preventDefault();
   const newobject = createobject();
   injectobject(newobject);
