@@ -36,9 +36,9 @@ DOMSelectors.form.addEventListener("submit", function (event) {
       <p>Move2${object.move2}</p>
   
       <button class="removebutton">Remove</button>
-      <div>`;
+      </div>`;
       DOMSelectors.card.insertAdjacentHTML("beforeend", cardHTML);
-  }
+  } 
   
   function ClearInputFields() { 
     DOMSelectors.image.value = "";
@@ -55,8 +55,9 @@ DOMSelectors.form.addEventListener("submit", function (event) {
       card.remove();
     }
   }
-  
   DOMSelectors.card.addEventListener("click", removeCard);
+
+
   event.preventDefault();
   const newobject = createobject();
   injectobject(newobject);
