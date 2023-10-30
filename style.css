@@ -10,11 +10,14 @@ body, html{
 
 .form{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     margin-bottom: 10px;
     text-align: left;
-    align-content: center;
-    width: 80%;
+    justify-content: left;
+    width: 20%;
+    position: absolute;
+    left: 30px;
 }
 .form input[type="text"] {
     background-color: azure;
@@ -30,27 +33,33 @@ body, html{
 }
 
 .card{
-    margin: 20px;
+    flex-wrap: wrap;
+    display: flex;
+    margin: 5%;
     padding: 20px;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: right;
 }
 
 .newcard{
-    position: relative;
-    width:10%;
+    flex-wrap: wrap;
+    display: flex;
+    position: relative  ;
+    width:150px;
     height:auto;
-    margin:2%;
+    margin:20px;
     border-radius: 20px;
     border: 1px solid black;
     background-color: white;
     flex-direction:column;
+    justify-content: center;
 }
 .newcard p{margin:5px;}
 .card img {
     max-width: 80%;
     max-height: 60%;
+    object-fit: fill;
     margin-bottom: 10px;
 }
 
