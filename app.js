@@ -51,8 +51,7 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   
   function removeCard(event) {
     if (event.target.classList.contains("removebutton")) {
-      const card = event.target.closest(".newcard");
-      card.remove();
+      event.target.closest(".newcard").remove();
     }
   }
   DOMSelectors.card.addEventListener("click", removeCard);
