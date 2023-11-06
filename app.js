@@ -2,9 +2,7 @@ const DOMSelectors = {
   form: document.querySelector(".form"),
   image: document.getElementById("image"),
   name: document.getElementById("name"),
-  type: document.getElementById("type"),
-  move1: document.getElementById("move1"),
-  move2: document.getElementById("move2"),
+  desc: document.getElementById("desc"),
   card: document.querySelector(".card"),
 };
 
@@ -13,16 +11,12 @@ const DOMSelectors = {
 DOMSelectors.form.addEventListener("submit", function (event) {
   function createobject() {
     const nameValue = DOMSelectors.name.value;
-    const typeValue = DOMSelectors.type.value;
-    const move1Value = DOMSelectors.move1.value;
-    const move2Value = DOMSelectors.move2.value;
+    const descValue = DOMSelectors.desc.value;
     const imageurl = DOMSelectors.image.value;
   
     return {
       name: nameValue,
-      type: typeValue,
-      move1: move1Value,
-      move2: move2Value,
+      desc: descValue,
       imageurl: imageurl,
     };
   }
@@ -30,10 +24,8 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   function injectobject(object) {
     const cardHTML = `<div class=newcard>
       <img src="${object.imageurl}" alt="Image/Error">
-      <p>Name:${object.name}</p>
-      <p>Type:${object.type}</p>
-      <p>Move1${object.move1}</p>
-      <p>Move2${object.move2}</p>
+      <p>${object.name}</p>
+      <p>${object.desc}</p>
   
       <button class="removebutton">Remove</button>
       </div>`;
@@ -43,19 +35,26 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   function ClearInputFields() { 
     DOMSelectors.image.value = "";
     DOMSelectors.name.value = "";
-    DOMSelectors.type.value = "";
-    DOMSelectors.move1.value = "";
-    DOMSelectors.move2.value = "";
+    DOMSelectors.desc.value = "";
   
   }
-  
+  function remove(event){
+    let removebtn = document.querySelectorAll(".removebutton")
+    event.target.parentElement.remove()
+  }
+  injectobject.removebutton.forEach((btn) => 
+    btn.addEventListener("click", remove));
+
+
+
+  /*
   function removeCard(event) {
     if (event.target.classList.contains("removebutton")) {
       event.target.closest(".newcard").remove();
     }
   }
   DOMSelectors.card.addEventListener("click", removeCard);
-
+*/
 
   event.preventDefault();
   const newobject = createobject();
