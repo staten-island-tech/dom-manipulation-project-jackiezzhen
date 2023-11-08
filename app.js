@@ -6,9 +6,6 @@ const DOMSelectors = {
   card: document.querySelector(".card"),
 };
 
-
-
-DOMSelectors.form.addEventListener("submit", function (event) {
   function createobject() {
     const nameValue = DOMSelectors.name.value;
     const descValue = DOMSelectors.desc.value;
@@ -23,13 +20,14 @@ DOMSelectors.form.addEventListener("submit", function (event) {
   
   function injectobject(object) {
     const cardHTML = `<div class=newcard>
+    <p>${object.name}</p>
       <img src="${object.imageurl}" alt="Image/Error">
-      <p>${object.name}</p>
       <p>${object.desc}</p>
   
       <button class="removebutton">Remove</button>
       </div>`;
       DOMSelectors.card.insertAdjacentHTML("beforeend", cardHTML);
+      removebtn();
   } 
   
   function ClearInputFields() { 
@@ -38,35 +36,21 @@ DOMSelectors.form.addEventListener("submit", function (event) {
     DOMSelectors.desc.value = "";
   
   }
-  function remove(event){
-    let removebtn = document.querySelectorAll(".removebutton")
-    event.target.parentElement.remove()
+
+  function removebtn() {
+    let removeButtons = document.querySelectorAll(".removebutton");
+    removeButtons.forEach((btn) => {
+      btn.addEventListener("click", remove);
+    });
   }
-  injectobject.removebutton.forEach((btn) => 
-    btn.addEventListener("click", remove));
-
-
-
-  /*
-  function removeCard(event) {
-    if (event.target.classList.contains("removebutton")) {
-      event.target.closest(".newcard").remove();
-    }
-  }
-  DOMSelectors.card.addEventListener("click", removeCard);
-*/
-
-  event.preventDefault();
-  const newobject = createobject();
-  injectobject(newobject);
-  ClearInputFields();
   
-});
-
-
-/*
-    console.log(DOMSelectors.name.value);
-    DOMSelectors.h2.forEach(
-        (e1) => e1.textContent = DOMSelectors.name.value);
-});
-*/
+  function remove(event) {
+    event.target.parentElement.remove();
+  }
+  
+  DOMSelectors.form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const newobject = createobject();
+    injectobject(newobject);
+    ClearInputFields();
+  });
